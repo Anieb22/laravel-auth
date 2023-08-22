@@ -20,6 +20,7 @@
                   <tbody>
                   @foreach($projects as $project)
                     <tr>
+                      <td>{{ $project->id }}</td>
                       <td>{{ $project->azienda }}</td>
                       <td>{{ $project->nome_progetto }}</td>
                       <td>{{ $project->data_di_creazione }}</td>
