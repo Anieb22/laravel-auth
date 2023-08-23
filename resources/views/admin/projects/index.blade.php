@@ -26,7 +26,7 @@
                       <td>{{ $project->data_di_creazione }}</td>
                       <td>
                         <button type="button" class="btn btn-primary">
-                            <a href="#" class="link-underline link-underline-opacity-0 link-light">
+                            <a href="{{ route('admin.projects.show', ['project' => $project]) }}" class="link-underline link-underline-opacity-0 link-light">
                                 <i class="fas fa-eye"></i>
                             </a>
                         </button>
