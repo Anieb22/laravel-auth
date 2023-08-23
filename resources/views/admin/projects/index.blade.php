@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12 my-5">
                 <button type="button" class="btn btn-primary">
-                    <a href="#" class="link-underline link-underline-opacity-0 link-light">
+                    <a href="{{ route('admin.projects.create') }}" class="link-underline link-underline-opacity-0 link-light">
                         Aggiungi Progetto
                     </a>
                 </button>
