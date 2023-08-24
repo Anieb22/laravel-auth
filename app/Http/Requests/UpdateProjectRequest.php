@@ -24,7 +24,11 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'azienda' => 'required|max:50',
+            'nome_progetto' => 'required|min:3|max:50',
+            'descrizione' => 'nullable|min:5',
+            'passaggi' => 'nullable',
+            'data_di_creazione' => 'required|date_format:Y-m-d|min:3|max:255'
         ];
     }
 }
