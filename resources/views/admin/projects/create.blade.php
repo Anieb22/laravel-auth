@@ -2,17 +2,17 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-12 my-5">
-        @if ($errors->any())
-                    <div class="alert alert-warning" role="alert">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-            <form action="{{route('admin.projects.store')}}" method="POST">
+        <div class="col-9 my-5">
+            @if ($errors->any())
+                <div class="alert alert-warning" role="alert">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group my-2">
                     <label for="" class="control-label">Azienda</label>
@@ -34,8 +34,13 @@
                     <label for="" class="control-label">Data di Creazione</label>
                     <input type="date" class="form-control" id="data_di_creazione" name="data_di_creazione" placeholder="Data di Creazione">
                 </div>
-                <div class="form-group my-2">
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Default file input example</label>
+                  <input class="form-control" type="file" id="formFile">
+                </div>
+                <div class="form-group my-2 d-flex justify-content-between">
                     <button type="submit" class="btn btn-primary">Aggiungi Progetto</button>
+                    <a class="btn btn-md btn-primary" href="{{route('admin.projects.index')}}">Torna alla home</a>
                 </div>
             </form>
         </div>
