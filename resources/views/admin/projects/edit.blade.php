@@ -12,7 +12,7 @@
                         </ul>
                     </div>
                 @endif
-            <form action="{{route('admin.projects.update', $project->id)}}" method="post">
+            <form action="{{route('admin.projects.update', $project->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 @method('PUT')
@@ -35,6 +35,10 @@
                 <div class="form-group my-2">
                     <label for="" class="control-label">Data di Creazione</label>
                     <input type="date" class="form-control" id="data_di_creazione" name="data_di_creazione" placeholder="Data di Creazione" value="{{$project->data_di_creazione}}">
+                </div>
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Logo</label>
+                  <input class="form-control" type="file" id="thumb" name="thumb">
                 </div>
                 <div class="form-group my-2">
                     <button type="submit" class="btn btn-primary">Salva Progetto</button>

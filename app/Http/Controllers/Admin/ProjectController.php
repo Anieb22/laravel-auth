@@ -92,6 +92,12 @@ class ProjectController extends Controller
     {
         $form_data=$request->all();
         $project->update($form_data);
+        if ($request->hasFile('thumb')) {
+            Storage::delete($project->thumb);
+            $path = $request->file('thumb')->store('thumb');
+            $project->thumb = $path;
+            $project->save();
+        }
 
         return redirect()->route('admin.projects.index');
     }
