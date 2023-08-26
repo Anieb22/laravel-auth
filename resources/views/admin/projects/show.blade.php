@@ -1,12 +1,17 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="bg-primary" style="height: 100px"></div>
 <div class="container">
     <div class="row">
         <div class="col-12" id="projects">
+        <div class="col-3">
+                    @if ($project->thumb === null)
+                    <img src="{{ Vite::asset('storage/app/public/jo-szczepanska-9OKGEVJiTKk-unsplash.jpg')}}" class="img-thumbnail" alt="">
+                    @else
+                    <img src="{{ asset('storage/'.$project->thumb) }}" alt="" class="img-thumbnail">
+                    @endif
+                </div>
             <div class="col-12 position-absolute w-75" id="project">
-                <img src="{{ asset('storage/' . $project->thumb) }}" alt="" class="my-3">
             </div>
             <div class="col-8 bg-success d-flex flex-row mt-4 align-items-center border rounded border-0 p-2 justify-content-between">
                 <section class="price d-flex flex-row">U.S.:
@@ -94,6 +99,5 @@
 
         </div>
     </div>
-</div>
 
 @endsection

@@ -35,8 +35,8 @@
                     <input type="date" class="form-control" id="data_di_creazione" name="data_di_creazione" placeholder="Data di Creazione">
                 </div>
                 <div class="mb-3">
-                  <label for="formFile" class="form-label">Default file input example</label>
-                  <input class="form-control" type="file" id="formFile">
+                  <label for="formFile" class="form-label">Logo</label>
+                  <input class="form-control" type="file" id="thumb" name="thumb">
                 </div>
                 <div class="form-group my-2 d-flex justify-content-between">
                     <button type="submit" class="btn btn-primary">Aggiungi Progetto</button>

@@ -23,7 +23,7 @@ class ProjectSeeder extends Seeder
             $newProject->descrizione = $faker->paragraph();
             $newProject->passaggi = $faker->paragraph();
             $newProject->data_di_creazione = $faker->date('Y_m_d');
-            $newProject->image = $faker->imageUrl(640, 480, 'animals', true);
+            $newProject->thumb = $faker->imageUrl(640, 480, 'animals', true);
     
             $newProject->save();
         }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Project;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreProjectRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -47,8 +48,10 @@ class ProjectController extends Controller
         $project->descrizione = $form_data['descrizione'];
         $project->passaggi = $form_data['passaggi'];
         $project->data_di_creazione = $form_data['data_di_creazione'];        
-        $img_path = Storage::put('uploads', $data['image']);
-
+        if ($request->hasFile('thumb')) {
+            $path = $request->file('thumb')->store('thumb');
+            $project->thumb = $path;
+        }
         $project->save();
         return redirect()->route('admin.projects.index');
 

@@ -28,7 +28,8 @@ class StoreProjectRequest extends FormRequest
             'nome_progetto' => 'required|min:3|max:50',
             'descrizione' => 'nullable|min:5',
             'passaggi' => 'nullable',
-            'data_di_creazione' => 'required|date_format:Y-m-d|min:3|max:255'
+            'thumb' => 'nullable|max:250',
+            'data_di_creazione' => 'required|date_format:Y-m-d|min:3|max:255',
         ];
     }
 }
